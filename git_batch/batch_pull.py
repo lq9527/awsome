@@ -25,13 +25,7 @@ def pull_func(lib,dir):
 def pull():
     root = os.getcwd()# 当前的目录
     code1 = pull_func("58ClientProject",root)
-    if code1 != 0:
-        return
     code2 = pull_func("58JobLib",root+"/58JobLib")
-    if code2 != 0:
-        return
     code3 = pull_func("58WuxianClient",root+"/58WuxianClient")
-    if code3 != 0:
-        return        
 
 pull()
