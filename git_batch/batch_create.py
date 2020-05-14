@@ -15,9 +15,9 @@ def checkout_func(lib,dir,branchName):
         print(">"+lib+"❎本地有未提交的更改")
         return 1
 
-    repo.git.branch(branchName)
+    repo.git.branch(str(branchName))
     
-    repo.git.checkout(branchName)
+    repo.git.checkout(str(branchName))
 
     print(">"+lib+"新分支，",repo.active_branch)
 

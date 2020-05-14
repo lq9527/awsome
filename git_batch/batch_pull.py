@@ -15,9 +15,8 @@ def pull_func(lib,dir):
         print(">"+lib+"❎本地有未提交的更改")
         return 1
     # 获取默认版本库 origin
-    remote = repo.remote()
-    # 从远程版本库拉取分支
-    code = remote.pull()
+    repo.git.fetch()
+    subprocess.call(['git','pull','origin',str(currentBranch)])
 
     print(">"+lib+"✅pull SUCCESS，",repo.active_branch)
     return 0
