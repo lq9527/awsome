@@ -16,6 +16,10 @@
 - 命令：``python batch_checkout.py -o <branchName>``
 - 场景：一键切换多仓库分支
 
+###### 批量Merge
+- 命令：``python batch_merge.py -o <branchName>``
+- 场景：一键merge多仓库分支
+
 ### 运行环境
 
 - 需要安装 GitPython库
