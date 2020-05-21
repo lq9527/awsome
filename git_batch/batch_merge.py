@@ -18,10 +18,13 @@ def merge_func(lib, dir, branchName):
         return 1
 
     remote = repo.remote()
-    repo.git.fetch()
-    subprocess.call(['git','pull','origin',str(currentBranch)])
+    # repo.git.fetch()
+    # subprocess.call(['git','pull','origin',str(currentBranch)])
     # repo.git.checkout(branchName)
+    subprocess.call(['git','fetch'])
+    subprocess.call(['git','pull'])
     code = subprocess.call(['git','merge',"--no-edit",'origin',str(currentBranch)])
+
     if(code == 0):
         print(">" + lib + "✅merge SUCCESS")
     else:
