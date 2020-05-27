@@ -11,7 +11,8 @@ def merge_func(lib, dir, branchName):
     os.chdir(dir)
     repo = Repo()
     currentBranch = repo.active_branch
-    print(">" + lib + "切换前分支，", currentBranch)
+    print(">" + lib + "当前分支，", currentBranch)
+    print(">" + lib + "要merge的分支，", str(branchName))
     # 返回是否有改动（包括未add和未commit的）
     if repo.is_dirty() is True:
         print(">" + lib + "❎本地有未提交的更改")
@@ -20,10 +21,9 @@ def merge_func(lib, dir, branchName):
     remote = repo.remote()
     # repo.git.fetch()
     # subprocess.call(['git','pull','origin',str(currentBranch)])
-    # repo.git.checkout(branchName)
     subprocess.call(['git','fetch'])
     subprocess.call(['git','pull'])
-    code = subprocess.call(['git','merge','--no-commit','origin',str(currentBranch)])
+    code = subprocess.call(['git','merge','--no-commit',str(branchName)])
 
     if(code == 0):
         print(">" + lib + "✅merge SUCCESS")
