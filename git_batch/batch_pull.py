@@ -4,7 +4,6 @@ from git import Repo
 
 # TODO 目录自动获取
 
-
 def pull_func(lib,dir):
     os.chdir(dir)
     repo = Repo()
@@ -15,8 +14,9 @@ def pull_func(lib,dir):
         print(">"+lib+"❎本地有未提交的更改")
         return 1
     # 获取默认版本库 origin
-    repo.git.fetch()
-    subprocess.call(['git','pull','origin',str(currentBranch)])
+    # repo.git.fetch()
+    subprocess.call(['git','fetch'])
+    subprocess.call(['git','pull'])
 
     print(">"+lib+"✅pull SUCCESS，",repo.active_branch)
     return 0
