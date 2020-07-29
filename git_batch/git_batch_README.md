@@ -20,6 +20,10 @@
 - 命令：``python batch_merge.py -o <branchName>``
 - 场景：一键merge多仓库分支
 
+###### 批量Push
+- 命令：``python batch_push.py``
+- 场景：批量push
+
 ### 运行环境
 
 - 需要安装 GitPython库
